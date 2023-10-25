@@ -2,8 +2,9 @@
 #include "constants.h"
 #include "BitVector.h"
 
-uint8_t outputBuf[3] = {0};
+uint8_t outputBuf[8] = {0};
 
+// set the correct key value of the keyboard buffer
 void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
 {
   switch(morseSignals)
@@ -129,9 +130,10 @@ void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
 void writeToSerial(short characterToSend)
 {
     calculateBufToSend(characterToSend, outputBuf);
-    Serial.write(outputBuf, 3);
+    Serial.write(outputBuf, 8);
+    // Release key
     outputBuf[2] = 0;
-    Serial.write(outputBuf, 3);
+    Serial.write(outputBuf, 8);
 }
 
 void interpretBitvectorThenWriteToSerial(BitVector<SIGNALBITVECTORSIZE> & signalBitvector, short dotTiming)
