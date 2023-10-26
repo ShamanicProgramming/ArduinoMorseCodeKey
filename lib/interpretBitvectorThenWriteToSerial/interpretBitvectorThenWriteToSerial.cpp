@@ -142,6 +142,7 @@ void interpretBitvectorThenWriteToSerial(BitVector<SIGNALBITVECTORSIZE> & signal
     short sectionLength = 1;
     bool currentSection = signalBitvector[0];
     short wordSeperatorLength = dotTiming * 7;
+    short charSeperatorLength = dotTiming * 3;
 
     for(short i = 1; i < SIGNALBITVECTORSIZE; i++)
     {
@@ -162,7 +163,7 @@ void interpretBitvectorThenWriteToSerial(BitVector<SIGNALBITVECTORSIZE> & signal
             else // Previous section was 'off'
             {
                 // Detecting character seperator
-                if(sectionLength >= dotTiming && sectionLength < wordSeperatorLength)
+                if(sectionLength >= charSeperatorLength && sectionLength < wordSeperatorLength)
                 {
                     delay(50);
                     writeToSerial(currentCharacter);
