@@ -38,5 +38,10 @@ void loop()
     digitalWrite(redLed, HIGH);
     short dotTiming = calculateTimings(signalBitvector);
     interpretBitvectorThenWriteToSerial(signalBitvector, dotTiming);
+
+    for(short i = 1; i < SIGNALBITVECTORSIZE; i++)
+    {
+      signalBitvector[i] = false;
+    }
   }
 }
