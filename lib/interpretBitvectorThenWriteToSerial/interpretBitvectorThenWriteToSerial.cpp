@@ -12,25 +12,25 @@ void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
     case 0:
       outputBuf[2] = 44; // Spacebar
       break;
-    case 21:
+    case 12:
       outputBuf[2] = 4; // A
       break;
-    case 1112:
+    case 2111:
       outputBuf[2] = 5; // B
       break;
-    case 1212:
+    case 2121:
       outputBuf[2] = 6; // C
       break;
-    case 112:
+    case 211:
       outputBuf[2] = 7; // D
       break;
     case 1:
       outputBuf[2] = 8; // E
       break;
-    case 1211:
+    case 1121:
       outputBuf[2] = 9; // F
       break;
-    case 122:
+    case 221:
       outputBuf[2] = 10; // G
       break;
     case 1111:
@@ -39,19 +39,19 @@ void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
     case 11:
       outputBuf[2] = 12; // I
       break;
-    case 2221:
+    case 1222:
       outputBuf[2] = 13; // J
       break;
     case 212:
       outputBuf[2] = 14; // K
       break;
-    case 1121:
+    case 1211:
       outputBuf[2] = 15; // L
       break;
     case 22:
       outputBuf[2] = 16; // M
       break;
-    case 12:
+    case 21:
       outputBuf[2] = 17; // N
       break;
     case 222:
@@ -60,7 +60,7 @@ void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
     case 1221:
       outputBuf[2] = 19; // P
       break;
-    case 2122:
+    case 2212:
       outputBuf[2] = 20; // Q
       break;
     case 121:
@@ -72,49 +72,49 @@ void calculateBufToSend(short morseSignals, uint8_t outputBuf[8])
     case 2:
       outputBuf[2] = 23; // T
       break;
-    case 211:
+    case 112:
       outputBuf[2] = 24; // U
       break;
-    case 2111:
+    case 1112:
       outputBuf[2] = 25; // V
       break;
-    case 221:
+    case 122:
       outputBuf[2] = 26; // W
       break;
     case 2112:
       outputBuf[2] = 27; // X
       break;
-    case 2212:
+    case 2122:
       outputBuf[2] = 28; // Y
       break;
-    case 1122:
+    case 2211:
       outputBuf[2] = 29; // Z
       break;
-    case 22221:
+    case 12222:
       outputBuf[2] = 30; // 1 char
       break;
-    case 22211:
+    case 11222:
       outputBuf[2] = 31; // 2 char
       break;
-    case 22111:
+    case 11122:
       outputBuf[2] = 32; // 3 char
       break;
-    case 21111:
+    case 11112:
       outputBuf[2] = 33; // 4 char
       break;
     case 11111:
       outputBuf[2] = 34; // 5 char
       break;
-    case 11112:
+    case 21111:
       outputBuf[2] = 35; // 6 char
       break;
-    case 11122:
+    case 22111:
       outputBuf[2] = 36; // 7 char
       break;
-    case 11222:
+    case 22211:
       outputBuf[2] = 37; // 8 char
       break;
-    case 12222:
+    case 22221:
       outputBuf[2] = 38; // 9 char
       break;
     case 22222:
