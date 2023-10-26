@@ -188,4 +188,10 @@ void interpretBitvectorThenWriteToSerial(BitVector<SIGNALBITVECTORSIZE> & signal
             sectionLength++;
         }
     }
+    // Send any remaining characters
+    if(currentCharacter != 0)
+    {
+      writeToSerial(currentCharacter);
+    }
+
 }
