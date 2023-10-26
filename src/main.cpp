@@ -1,8 +1,9 @@
 #include "BitVector.h"
 #include "calculateTimings.h"
-#include "interpretBitvectorThenWriteToSerial.h"
+#include "interpretBitvectorAsKeystrokes.h"
 #include "readSignalToIncrements.h"
 #include <Arduino.h>
+#include <Keyboard.h>
 
 int button = 7; // Input pin from the button
 int greenLed = 12;
@@ -12,6 +13,7 @@ BitVector<SIGNALBITVECTORSIZE> signalBitvector;
 
 void setup() // Runs once when sketch starts
 {
+  Keyboard.begin();
   pinMode(button, INPUT_PULLUP);
   pinMode(greenLed, OUTPUT);
   pinMode(redLed, OUTPUT);
@@ -37,7 +39,7 @@ void loop()
     digitalWrite(yellowLed, LOW);
     digitalWrite(redLed, HIGH);
     short dotTiming = calculateTimings(signalBitvector);
-    interpretBitvectorThenWriteToSerial(signalBitvector, dotTiming);
+    interpretBitvectorAsKeystrokes(signalBitvector, dotTiming);
 
     for(short i = 1; i < SIGNALBITVECTORSIZE; i++)
     {
