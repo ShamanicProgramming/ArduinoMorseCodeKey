@@ -30,10 +30,13 @@ void testCalculateTiming()
     TEST_ASSERT_TRUE(result == 7);
 }
 
-int main( int argc, char **argv) {
+void loop() {}
+
+void setup() {
+    delay(2000);
     UNITY_BEGIN();
 
     RUN_TEST(testCalculateTiming);
 
-    return UNITY_END();
+    UNITY_END();
 }
