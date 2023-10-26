@@ -7,6 +7,6 @@
 /*
 - Interprets Morse characters in the bitvector one at a time, sending each through usb as a keystroke.
 */
-void interpretBitvectorAsKeystrokes(BitVector<SIGNALBITVECTORSIZE> & signalBitvector, short dotTiming);
+void interpretBitvectorAsKeystrokes(BitVector<SIGNALBITVECTORSIZE> &signalBitvector, short dotTiming);
 
 #endif

@@ -3,11 +3,13 @@
 #include "BitVector.h"
 #include "constants.h"
 
-void setUp(void) {
+void setUp(void)
+{
     // set stuff up here
 }
 
-void tearDown(void) {
+void tearDown(void)
+{
     // clean stuff up here
 }
 
@@ -17,7 +19,7 @@ void testCalculateTiming()
 
     BitVector<SIGNALBITVECTORSIZE> testBitvector;
 
-    for (int i = 0; i < (int) (sizeof(testArray)/sizeof(testArray[0])); i++)
+    for (int i = 0; i < (int)(sizeof(testArray) / sizeof(testArray[0])); i++)
     {
         testBitvector[i] = testArray[i];
     }
@@ -32,7 +34,8 @@ void testCalculateTiming()
 
 void loop() {}
 
-void setup() {
+void setup()
+{
     delay(2000);
     UNITY_BEGIN();
 

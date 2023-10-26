@@ -13,7 +13,6 @@ BitVector<SIGNALBITVECTORSIZE> signalBitvector;
 
 void setup() // Runs once when sketch starts
 {
-  Keyboard.begin();
   pinMode(button, INPUT_PULLUP);
   pinMode(greenLed, OUTPUT);
   pinMode(redLed, OUTPUT);
@@ -30,6 +29,7 @@ void loop()
   // Wait for a signal
   if (digitalRead(button) == LOW)
   {
+    Keyboard.begin();
     // Read mode
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
@@ -41,9 +41,10 @@ void loop()
     short dotTiming = calculateTimings(signalBitvector);
     interpretBitvectorAsKeystrokes(signalBitvector, dotTiming);
 
-    for(short i = 1; i < SIGNALBITVECTORSIZE; i++)
+    for (short i = 1; i < SIGNALBITVECTORSIZE; i++)
     {
       signalBitvector[i] = false;
     }
+    Keyboard.end();
   }
 }

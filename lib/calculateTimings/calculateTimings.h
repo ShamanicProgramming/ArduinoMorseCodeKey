@@ -11,6 +11,6 @@
 - The sample array is sorted according to the length of each sample
 - Finally, we find the location in the array with the largest difference between neighbouring sample lengths. We consider the smaller length to be the maximum size of a Morse dot.
 */
-short calculateTimings(BitVector<SIGNALBITVECTORSIZE> & signalBitvector);
+short calculateTimings(BitVector<SIGNALBITVECTORSIZE> &signalBitvector);
 
 #endif

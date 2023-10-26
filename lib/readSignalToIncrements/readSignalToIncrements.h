@@ -9,6 +9,6 @@
 - Reading ends once either reaching the end of the bitvector or there is no signal for the number of increments set by the timeout.
 - We assume that the buttonPin is configured to INPUT_PULLUP
 */
-void readSignalToMSIncrements(int buttonPin, BitVector<SIGNALBITVECTORSIZE> & signalBitvector, int incrementLengthInMS, int timeoutIncrements);
+void readSignalToMSIncrements(int buttonPin, BitVector<SIGNALBITVECTORSIZE> &signalBitvector, int incrementLengthInMS, int timeoutIncrements);
 
 #endif
