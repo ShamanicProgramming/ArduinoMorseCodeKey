@@ -33,7 +33,7 @@ void loop()
     // Read mode
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
-    readSignalToMSIncrements(button, signalBitvector, 50, 40);
+    readSignalToMSIncrements(button, signalBitvector, 25, 2000);
 
     // Go to write mode
     digitalWrite(yellowLed, LOW);
