@@ -17,6 +17,7 @@ void setup() // Runs once when sketch starts
   pinMode(greenLed, OUTPUT);
   pinMode(redLed, OUTPUT);
   pinMode(yellowLed, OUTPUT);
+  Keyboard.begin();
   Serial.begin(9600);
 }
 
@@ -29,7 +30,6 @@ void loop()
   // Wait for a signal
   if (digitalRead(button) == LOW)
   {
-    Keyboard.begin();
     // Read mode
     digitalWrite(greenLed, LOW);
     digitalWrite(yellowLed, HIGH);
@@ -41,10 +41,10 @@ void loop()
     short dotTiming = calculateTimings(signalBitvector);
     interpretBitvectorAsKeystrokes(signalBitvector, dotTiming);
 
+    // Reset bitvector
     for (short i = 1; i < SIGNALBITVECTORSIZE; i++)
     {
       signalBitvector[i] = false;
     }
-    Keyboard.end();
   }
 }

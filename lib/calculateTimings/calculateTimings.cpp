@@ -17,7 +17,7 @@ int compareSamples(const void *pa, const void *pb)
 short calculateTimings(BitVector<SIGNALBITVECTORSIZE> &signalBitvector)
 {
 
-    short signalSamples[SIGNALSAMPLEARRAYSIZE];
+    short signalSamples[SIGNALSAMPLEARRAYSIZE] = {0};
     short signalSampleIndex = 0;
     short currentLength = 0;
 
@@ -29,7 +29,7 @@ short calculateTimings(BitVector<SIGNALBITVECTORSIZE> &signalBitvector)
         {
             currentLength++;
         }
-        else if (value == false)
+        else if (value == false && currentLength != 0) // currentLength != 0 ensures we don't add empty entries for every '0' bit
         {
             signalSamples[signalSampleIndex] = currentLength;
             signalSampleIndex++;
@@ -44,12 +44,9 @@ short calculateTimings(BitVector<SIGNALBITVECTORSIZE> &signalBitvector)
     }
 
     // Sort samples
-
-    // Sort
     qsort(signalSamples, SIGNALSAMPLEARRAYSIZE, sizeof(signalSamples[0]), compareSamples);
 
     // Find dot timing
-
     short largestDifference = 0;
     short standardDotTiming = 0;
     for (short i = 0; i < SIGNALSAMPLEARRAYSIZE - 1; i++)
