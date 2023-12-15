@@ -15,3 +15,5 @@ The parameters of `readSignalToMSIncrements` can be adjusted to change the lengt
 - Increase the possible length of a message by increasing the SIGNALBITVECTORSIZE.
 - Increase the resolution of the data (for fast Morse code users) by reducing incrementLengthInMS. This will reduce the message length unless SIGNALBITVECTORSIZE is increased.
 ```
+
+![device photo](./morsecodekeyphoto.jpg)
